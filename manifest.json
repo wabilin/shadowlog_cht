@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "ShadowlogCht",
+  "author": "wabilin",
+  "version": "0.1",
+
+  "description": "Chinese(Taiwan) Translation for shadowlog.com",
+
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://shadowlog.com/*"],
+      "js": ["svlog_cht.js"]
+    }
+  ]
+}
+
