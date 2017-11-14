@@ -1,11 +1,14 @@
 let translateAll = (elements, translateTable) => {
-    for (ele of elements) {
+    for (let ele of elements) {
         transferElementLang(ele, translateTable);
     }
 };
 
 let transferElementLang = (ele, translateTable) => {
-    for (let jp_term in translateTable) {
+    let jp_terms = Object.keys(translateTable)
+                         .sort((a, b) => b.length - a.length);
+
+    for (let jp_term of jp_terms) {
         if (haveSubstring(ele.innerHTML, jp_term)) {
             let cht_term = translateTable[jp_term];
             ele.innerHTML = ele.innerHTML.replace(jp_term, cht_term);
@@ -28,7 +31,9 @@ let titles = {
 let classes = {
     'ウィッチ':'巫師',
     'ヴァンパイア': '吸血鬼',
+    'ヴァンプ': '吸血鬼',
     'ネクロマンサー': '死靈法師',
+    'ネクロ': '死靈法師',
     'エルフ': '精靈',
     'ドラゴン': '龍族',
     'ロイヤル': '皇家護衛',
