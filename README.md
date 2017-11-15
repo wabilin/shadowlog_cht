@@ -1,7 +1,14 @@
 # Shadowlog Cht
 Chinese Translation for shadowlog.com.
 
-## License
+## Installation
+- For FireFox
+  [https://addons.mozilla.org/en-US/firefox/addon/shadowlogcht/](https://addons.mozilla.org/en-US/firefox/addon/shadowlogcht/)
+
+- For Chrome
+  [https://github.com/wabilin/shadowlog_cht/releases](https://github.com/wabilin/shadowlog_cht/releases)
+
+## License (GPLv3)
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
