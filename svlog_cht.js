@@ -1,26 +1,26 @@
-let translateAll = (elements, translateTable) => {
+const translateAll = (elements, translateTable) => {
   for (let ele of elements) {
     transferElementLang(ele, translateTable);
   }
 };
 
-let transferElementLang = (ele, translateTable) => {
-  let jp_terms = Object.keys(translateTable)
-      .sort((a, b) => b.length - a.length);
+const transferElementLang = (ele, translateTable) => {
+  const jp_terms = Object.keys(translateTable)
+        .sort((a, b) => b.length - a.length);
 
   for (let jp_term of jp_terms) {
     if (haveSubstring(ele.innerHTML, jp_term)) {
-      let cht_term = translateTable[jp_term];
+      const cht_term = translateTable[jp_term];
       ele.innerHTML = ele.innerHTML.replace(jp_term, cht_term);
     }
   }
 };
 
-let haveSubstring = (str, sub_str) => {
+const haveSubstring = (str, sub_str) => {
   return str.indexOf(sub_str) !== -1;
 };
 
-let titles = {
+const titles = {
   '使用割合': '使用比率',
   '使用されたリーダー': '使用主戰者',
   '使用デッキタイプ': '使用牌組',
@@ -28,7 +28,7 @@ let titles = {
   '勝利数': '勝利數'
 };
 
-let classes = {
+const classes = {
   'ウィッチ':'巫師',
   'ヴァンパイア': '吸血鬼',
   'ヴァンプ': '吸血鬼',
@@ -37,13 +37,15 @@ let classes = {
   'エルフ': '精靈',
   'ドラゴン': '龍族',
   'ロイヤル': '皇家護衛',
-  'ビショップ': '主教'
+  'ビショップ': '主教',
+  'ネメシス': '復仇者',
 };
 
-let decks = {
+const decks = {
   '超越ウィッチ': '超越法',
   '秘術ウィッチ': '土印法',
   'テンポウィッチ': '生物法',
+  'ドロシーウィッチ': '生物法',
   'ニュートラルウィッチ': '中立巫師',
   'ドロシー超越ウィッチ': '阿桃超越法',
   'アグロウィッチ': '快攻巫師',
@@ -105,24 +107,30 @@ let decks = {
   '(OTK)コンボエルフ': 'OTK 精靈',
   '冥府エルフ': '冥府精靈',
   'ミッド(テンポ)エルフ': '節奏精靈',
+  'ミッドレンジエルフ': '中速精靈',
   'コントロールエルフ': '控制精靈',
   '白狼エルフ': '白狼精靈',
   '薔薇エルフ': '薔薇精靈',
   '白銀エルフ': '白銀精靈',
   'エルフ全般': '未分類精靈',
 
-  'ミッドレンジロイヤル': '中速皇',
-  'アグロロイヤル': '快皇',
-  'フェイスロイヤル': '臉皇',
-  'コントロールロイヤル': '控皇',
-  'ニュートラルロイヤル': '中立皇',
+  'ミッドレンジロイヤル': '中速皇家',
+  'アグロロイヤル': '快攻皇家',
+  'フェイスロイヤル': '打臉皇家',
+  'コントロールロイヤル': '控制皇家',
+  'ニュートラルロイヤル': '中立皇家',
   '指揮官ロイヤル': '指揮官皇',
-  '潜伏ロイヤル': '潛伏皇',
-  '援護射撃ロイヤル': '砲擊皇',
-  '御旗ロイヤル': '旗皇',
-  'カエルロイヤル': '蛙皇',
-  '冥府ロイヤル': '冥府皇',
-  'ロイヤル全般': '未分類皇家'
+  '潜伏ロイヤル': '潛伏皇家',
+  '援護射撃ロイヤル': '砲擊皇家',
+  '御旗ロイヤル': '御旗皇家',
+  'カエルロイヤル': '蛙旅皇家',
+  '冥府ロイヤル': '冥府皇家',
+  'ロイヤル全般': '未分類皇家',
+
+  'アグロネメシス': '快攻復仇者',
+  'コントロールネメシス': '控制復仇者',
+  'ミッドレンジネメシス': '中速復仇者',
+  '操り人形ネメシス': '操偶復仇者',
 };
 
 let ths = document.querySelectorAll('th');
