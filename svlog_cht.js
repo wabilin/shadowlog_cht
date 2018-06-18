@@ -107,6 +107,7 @@ const decks = {
   '(OTK)コンボエルフ': 'OTK 精靈',
   '冥府エルフ': '冥府精靈',
   'ミッド(テンポ)エルフ': '節奏精靈',
+  'テンポエルフ': '節奏精靈',
   'ミッドレンジエルフ': '中速精靈',
   'コントロールエルフ': '控制精靈',
   '白狼エルフ': '白狼精靈',
@@ -131,10 +132,16 @@ const decks = {
   'コントロールネメシス': '控制復仇者',
   'ミッドレンジネメシス': '中速復仇者',
   '操り人形ネメシス': '操偶復仇者',
+  'アーティファクトネメシス' : '造物復仇者',
+
+  // TODO:
+  // タイラントネクロ
+  // ギガントキマイラウィッチ
+  // リアニメイトネクロ
 };
 
-let ths = document.querySelectorAll('th');
-let tds = document.querySelectorAll('td');
+const ths = document.querySelectorAll('th');
+const tds = document.querySelectorAll('td');
 translateAll(ths, titles);
 translateAll(tds, decks);
 translateAll(tds, classes);
